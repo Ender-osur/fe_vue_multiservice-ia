@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Desarrollador Full Stack Senior",
+    "company": "Empresa Tech",
+    "period": "Enero 2022 - Presente",
+    "description": [
+      "Desarrollo de aplicaciones web utilizando Vue.js y Node.js",
+      "Implementación de arquitecturas escalables",
+      "Liderazgo técnico de equipo de desarrollo"
+    ],
+    "technologies": ["Vue.js", "Node.js", "TypeScript", "MongoDB"]
+  },
+  {
+    "title": "Desarrollador Frontend",
+    "company": "Startup Innovadora",
+    "period": "Marzo 2020 - Diciembre 2021",
+    "description": [
+      "Desarrollo de interfaces de usuario responsivas",
+      "Optimización de rendimiento frontend",
+      "Integración con APIs RESTful"
+    ],
+    "technologies": ["React", "JavaScript", "CSS3", "REST APIs"]
+  }
+]
