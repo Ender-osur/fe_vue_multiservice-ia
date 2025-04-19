@@ -13,10 +13,33 @@ const messages = {
       placeholder: 'Type a message...',
       send: 'Send',
       userMessage: 'You',
-      botMessage: 'Bot'
+      botMessage: 'Bot',
+      lang: 'Language',
     },
     footer: {
       rights: 'Developed by Osur.dev',
+    },
+    services: {
+      title: 'Our Services',
+      heroTitle: 'Artificial Intelligence Services',
+      heroDescription: 'Explore our AI-powered tools to make your life easier.',
+      list: [
+        {
+          title: 'Smart Translator',
+          description: 'Translate texts accurately using OpenAI and DeepSeek.',
+          button: 'Explore',
+        },
+        {
+          title: 'Image Generator',
+          description: 'Create unique images with our image generation tool.',
+          button: 'Explore',
+        },
+        {
+          title: 'Coming Soon',
+          description: 'We are working on new tools for you. Stay tuned!',
+          button: 'More Information',
+        },
+      ],
     },
   },
   es: {
@@ -31,10 +54,33 @@ const messages = {
       placeholder: 'Escribe un mensaje...',
       send: 'Enviar',
       userMessage: 'Tú',
-      botMessage: 'Bot'
+      botMessage: 'Bot',
+      lang: 'Idioma',
     },
     footer: {
       rights: 'Desarrollador por Osur.dev',
+    },
+    services: {
+      title: 'Nuestros Servicios',
+      heroTitle: 'Servicios de Inteligencia Artificial',
+      heroDescription: 'Explora nuestras herramientas impulsadas por IA para facilitar tu vida.',
+      list: [
+        {
+          title: 'Traductor Inteligente',
+          description: 'Traduce textos con precisión utilizando OpenAI y DeepSeek.',
+          button: 'Explorar',
+        },
+        {
+          title: 'Generador de Imágenes',
+          description: 'Crea imágenes únicas con nuestra herramienta de generación de imágenes.',
+          button: 'Explorar',
+        },
+        {
+          title: 'Próximos Servicios',
+          description: 'Estamos trabajando en nuevas herramientas para ti. ¡Espéralos pronto!',
+          button: 'Más Información',
+        },
+      ],
     },
   },
 };

@@ -7,14 +7,14 @@ defineProps<{
 </script>
 
 <template>
-  <div :class="['flex mb-4', isUser ? 'justify-end' : 'justify-start']">
+  <div :class="['flex mb-4', isUser ? 'justify-end ' : 'justify-start']">
     <div
       :class="[
-        'max-w-[80%] rounded-lg px-4 py-2',
-        isUser ? 'bg-user-bubble text-white' : 'bg-bot-bubble text-text',
+        'w-[max-content] rounded-lg px-4 py-2',
+        isUser ? 'dark:text-user-chat-light text-user-chat-dark dark:bg-black bg-white' : ' dark:text-bot-chat-light text-bot-chat-dark',
       ]"
     >
-      <p class="text-sm md:text-base">{{ message }}</p>
+      <p class="text-sm md:text-base ">{{ message }}</p>
       <span class="text-xs opacity-70">{{ new Date(timestamp).toLocaleTimeString() }}</span>
     </div>
   </div>

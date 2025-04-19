@@ -48,27 +48,39 @@ html.dark a {
 
   --color-osur: #0AFFDA;
   --color-osur-dark: #2E5345;
+  --color-osur-2: #0AFFDA;
+  --color-osur-2-dark: #2E5345;
   --color-osur-hover: #09EBC9;
   --color-osur-dark-hover: #3D7565;
 
 
   /* Light mode */
-  --color-background-light: #f4f7fb;
+  --color-light: #f4f7fb;
+  --color-light-2: #e4e7eb;
+  --color-light-3: #f4f7fb;
   --color-primary: #007bff;
   --color-primary-hover: #fff;
-  --color-p-text: #1f2d3d;
+  --color-pt: #1f2d3d; /* primary text */
+  --color-ptd: #3f4d5d; /* primary text description */
   --color-subtext: #66788a;
-  --color-p-text-input: #171215;
+  --color-pt-dark: #171215; /* primary text dark */
+  --color-bot-chat-light: #f7f7f7;
+  --color-user-chat-light: #d8d8d8;
   --color-success: #4caf50;
   --color-error: #f44336;
   --color-accent: #b388ff;
 
   /* Dark mode */
-  --color-background-dark: #1a1e24;
+  --color-dark: #1a1e24;
+  --color-dark-2: #2a2e34;
+  --color-dark-3: #1a1e24;
   --color-surface-dark: #2a2f38;
   --color-primary-dark: #66aaff;
-  --color-p-text-light: #f4f7fb;
-  --color-p-text-input-light: #eaebea;
+  --color-pt-light: #f4f7fb; /* primary text light*/
+  --color-ptd-light: #d4d7db; /* primary text desption light */
+  --color-pti-light: #eaebea; /* primary text input light*/
+  --color-bot-chat-dark: #050505;
+  --color-user-chat-dark: #212321;
   --color-subtext-dark: #a3abb8;
   --color-hover-dark: #3a3f48;
 }

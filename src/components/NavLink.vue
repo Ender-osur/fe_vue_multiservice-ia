@@ -17,14 +17,14 @@ defineProps<{
   <div v-if="isMobile">
     <button
       @click="emit('toggle-menu')"
-      class="p-2 rounded-lg hover:bg-[color:var(--color-hover)] dark:hover:bg-[color:var(--color-hover-dark)] transition-colors text-[color:var(--color-text)] dark:text-[color:var(--color-primary-dark)] text-2xl"
+      class="p-2 rounded-lg transition-colors text-2xl"
     >
       ☰
     </button>
 
     <div
       v-if="isMobileMenuOpen"
-      class="absolute left-[40%] bg-[color:var(--color-background)] dark:bg-[color:var(--color-surface-dark)] shadow-lg shadow-black rounded-lg z-50 w-48 p-2"
+      class="absolute left-[40%] shadow-lg shadow-black rounded-lg z-50 w-48 p-2"
     >
       <template v-for="item in navItems" :key="item.href">
         <RouterLink

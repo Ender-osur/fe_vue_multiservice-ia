@@ -74,12 +74,12 @@ const navItems = [
 <template>
   <nav
     id="navbar"
-    class="w-full backdrop-blur-sm z-50 transition-colors duration-300 dark:bg-surface-dark bg-background-light"
+    class="w-full backdrop-blur-sm z-50 transition-colors duration-300 dark:bg-surface-dark bg-light"
   >
     <div class="subcontainer-navbar w-full">
       <div class="flex items-center justify-around">
-        <RouterLink to="/">
-          <div class="flex flex-row w-full items-center gap-2 bg-background-dark dark:bg-background-light pr-4 rounded-xl">
+        <RouterLink to="/home">
+          <div class="flex flex-row w-full items-center gap-2 bg-dark dark:bg-light pr-4 rounded-xl">
             <img src="/favicon.webp" alt="icono" height="40px" width="42px" />
             <span class=" dark:text-osur-dark text-osur font-bold">Multiservice</span>
           </div>
@@ -126,7 +126,7 @@ const navItems = [
 
           <div
             v-if="isLangMenuOpen"
-            class="select-language-button absolute top-12 right-10 mt-2 py-2 w-32 bg-background-light dark:bg-gray-800 rounded-lg shadow-lg dark::shadow-black border border-gray-200 dark:border-gray-700 cursor-pointer"
+            class="select-language-button absolute top-12 right-10 mt-2 py-2 w-32 bg-light dark:bg-gray-800 rounded-lg shadow-lg dark::shadow-black border border-gray-200 dark:border-gray-700 cursor-pointer"
           >
             <button
               v-for="locale in availableLocales"
