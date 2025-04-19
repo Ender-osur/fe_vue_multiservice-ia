@@ -7,6 +7,21 @@ const { t } = useI18n();
 const message = ref<string>('');
 const messageInput = ref<HTMLTextAreaElement | null>(null);
 const showScrollbar = ref(false);
+const textareaHeight = ref('40px');
+
+const languages = [
+  'English', // Inglés
+  'Español', // Español
+  'Français', // Francés
+  'Deutsch', // Alemán
+  'Italiano', // Italiano
+  'Português', // Portugués
+  'Русский', // Ruso
+  '中文', // Chino (chino simplificado)
+  '日本語', // Japonés
+  'العربية', // Árabe
+  '한국어', // Coreano
+];
 
 const autoResize = () => {
   const el = messageInput.value;
@@ -28,29 +43,18 @@ const emit = defineEmits<{
 
 const sendMessage = () => {
   const trimmed = message.value.trim();
-  if (!trimmed) return;
+  if (!trimmed) {
+    messageInput.value?.focus();
+    return;
+  }
   emit('send', trimmed);
   message.value = '';
+  textareaHeight.value = '40px';
 };
 
 const open = ref(false);
 const selected = ref<string | null>(null);
 const dropdownRef = ref<HTMLElement | null>(null);
-
-const languages = [
-  'English',     // Inglés
-  'Español',     // Español
-  'Français',    // Francés
-  'Deutsch',     // Alemán
-  'Italiano',    // Italiano
-  'Português',   // Portugués
-  'Русский',     // Ruso
-  '中文',         // Chino (chino simplificado)
-  '日本語',       // Japonés
-  'العربية',     // Árabe
-  '한국어',       // Coreano
-];
-
 
 const toggleDropdown = () => {
   open.value = !open.value;
@@ -78,11 +82,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div
-    class="flex w-full h-full items-center px-8 py-2 gap-2 bg-white dark:bg-surface-dark"
-  >
+  <div class="flex w-full h-full items-center px-8 py-2 gap-2 bg-white dark:bg-surface-dark">
     <!-- Textarea -->
-    <div class="flex-1 h-full">
+    <div class="flex-1 h-full items-center flex">
       <textarea
         v-model="message"
         ref="messageInput"
@@ -90,19 +92,23 @@ onBeforeUnmount(() => {
         :placeholder="t('chat.placeholder')"
         @keyup.enter.exact.prevent="sendMessage"
         :class="[
-          'w-full h-full resize-none max-h-[16rem] px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-600 focus:outline-none focus:border-osur-dark focus:dark:border-osur dark:bg-hover-dark dark:text-pti-light text-pti-',
+          'w-full resize-none max-h-[16rem] px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-600 focus:outline-none focus:border-osur-dark focus:dark:border-osur dark:bg-hover-dark dark:text-pti-light text-pti-dark',
           showScrollbar ? 'overflow-y-auto' : 'overflow-hidden',
         ]"
+        :style="{ height: textareaHeight }"
       />
     </div>
 
     <!-- Dropdown + Botón -->
     <div class="flex items-center gap-0 h-full">
       <!-- Dropdown -->
-      <div ref="dropdownRef" class="relative w-36 h-full">
+      <div
+        ref="dropdownRef"
+        class="relative w-36 h-full max-h-12 transition-color active:opacity-80 duration-50"
+      >
         <button
           @click="toggleDropdown"
-          class="relative w-full justify-center items-center flex h-full text-left bg-osur text-osur-dark dark:bg-osur-dark dark:text-osur rounded-l-full cursor-pointer"
+          class="border-2 border-r-0 border-osur-dark relative w-full font-bold justify-center items-center flex h-full text-left bg-osur text-osur-dark dark:bg-osur-dark dark:text-osur rounded-l-lg cursor-pointer"
         >
           {{ selected || $t('chat.lang') }}
         </button>
@@ -125,7 +131,7 @@ onBeforeUnmount(() => {
       <!-- Botón enviar -->
       <button
         @click="sendMessage"
-        class="w-20 h-full px-3 rounded-r-full font-bold tracking-wide transition-colors duration-200 cursor-pointer bg-osur-dark text-osur dark:bg-osur dark:text-osur-dark hover:opacity-70"
+        class="border-2 border-l-0 border-osur transition-color active:opacity-80 duration-50 w-20 h-full max-h-12 px-3 rounded-r-lg font-bold tracking-wide cursor-pointer bg-osur-dark text-osur dark:bg-osur dark:text-osur-dark hover:opacity-70"
       >
         {{ t('chat.send') }}
       </button>

@@ -24,7 +24,7 @@ defineProps<{
 
     <div
       v-if="isMobileMenuOpen"
-      class="absolute left-[40%] shadow-lg shadow-black rounded-lg z-50 w-48 p-2"
+      class="absolute dark:bg-dark left-[40%] shadow-lg shadow-black rounded-lg z-50 w-48 p-2"
     >
       <template v-for="item in navItems" :key="item.href">
         <RouterLink
